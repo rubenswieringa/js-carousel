@@ -5,6 +5,8 @@ All this thing does is set your images their `left`-property from 100% or -100% 
 
 The library expects any container-element containing one or more absolutely positioned `<img/>` elements, other child-elements will be ignored. Pass a jQuery-representation of the container to the Carousel constructor and you're done.
 
+This library has jQuery and Modernizr as dependencies.
+
 ## Example:
 
 ### HTML:
@@ -56,3 +58,10 @@ new Carousel( $('figure.carousel'), { auto: true });
 // or pass milliseconds:
 new Carousel( $('figure.carousel'), { auto: 3300 });
 ```
+
+## Options
+
+* **next** - *Next* navigation-button element
+* **prev** - *Previous* navigation-button element
+* **auto** - Set to true to enable automatic sliding. Alternatively you may provide the amount of milliseconds between each automatic slide.
+* **slideSelector** - Tag-name or DOM-selector for your slides. Defaults to ```>img```.
