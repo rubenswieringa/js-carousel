@@ -5,7 +5,9 @@ class @Carousel
   constructor: ( @element, options={} ) ->
     return unless @element?.length
     @currentIndex = 0
-    @slides = @element.find 'img'
+
+    @slideSelector = options.slideSelector || '>img'
+    @slides = @element.find "#{@slideSelector}"
     @slides.filter( ':not(:first)' ).remove()
 
     nextButton = options.next || @element.find 'a.next'
@@ -33,7 +35,7 @@ class @Carousel
     return false
 
   add: ( slide ) =>
-    lastSlide = @element.find 'img:last'
+    lastSlide = @element.find "#{@slideSelector}:last"
     lastSlide.after slide
     duration = @getTransitionDuration slide
 
