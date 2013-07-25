@@ -1,5 +1,7 @@
 
 class @Carousel
+  DEFAULT_INTERVAL = 3000
+
   constructor: ( @element, options={} ) ->
     return unless @element?.length
     @currentIndex = 0
@@ -10,6 +12,9 @@ class @Carousel
     prevButton = options.prev || @element.find 'a.prev'
     nextButton.click @next
     prevButton.click @prev
+
+    auto = if options.auto == true then Carousel.DEFAULT_INTERVAL else options.auto
+    @interval = setInterval @next, auto if auto
 
   next: =>
     @currentIndex++
