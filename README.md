@@ -13,8 +13,7 @@ The library expects any container-element containing one or more absolutely posi
   <img src="image1.jpg" />
   <img src="image2.jpg" />
   <img src="image3.jpg" />
-</figure>
-```
+</figure>```
 
 ### CSS:
 
@@ -31,23 +30,19 @@ figure.carousel img {
   top: 0;
   left: 0;
   transition: left 1s;
-}
-```
+}```
 
 ### JS:
 
-```new Carousel( $('figure.carousel'));
-```
+```new Carousel( $('figure.carousel'));```
 
 If your navigation-elements are contained by your container, provided they have ```next``` and ```prev``` as their CSS class-names, Carousel will automatically detect them. Alternatively you can pass next/previous navigation-elements to the constructor:
 
-```new Carousel( $('figure.carousel'), { next: $('#my_next_btn'), prev: $('#my_prev_btn') });
-```
+```new Carousel( $('figure.carousel'), { next: $('#my_next_btn'), prev: $('#my_prev_btn') });```
 
 Carousel can also slide automatically:
 
 ```new Carousel( $('figure.carousel'), { auto: true });
 
 // or pass milliseconds:
-new Carousel( $('figure.carousel'), { auto: 3300 });
-```
+new Carousel( $('figure.carousel'), { auto: 3300 });```
